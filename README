@@ -2,6 +2,18 @@ Installation:
 
   git clone git://github.com/jameshome/dotvim.git ~/.vim
 
-Create symlink:
+Symlink .vimrc:
 
-  ln -s ~/.vim/vimrc .vimrc
+  ln -s ~/.vim/vimrc ~/.vimrc
+
+Vim plugins are installed as git submodules. Check these out by running:
+
+  cd ~/.vim
+  git submodule init
+  git submodule update
+
+Add new ones with:
+
+  git submodule add (git url) bundle/(bundle name)
+  git add .
+
