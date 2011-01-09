@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/jh/1/storyframe/storyframe'
-let g:netrw_dirhist_2='/Users/jh/1/storyframe/storyframe/auth'
-let g:netrw_dirhist_3='/Users/jh/1/storyframe/storyframe'
-let g:netrw_dirhist_4='/Users/jh'
-let g:netrw_dirhist_5='/Users/jh/1'
-let g:netrw_dirhist_6='/Users/jh'
