@@ -1,19 +1,38 @@
+a .vim configuration by jh@jameshome.com
+
+Featuring:
+
+  birdsofparadise.vim
+  a faithful and complete vim colorscheme based on Joe Bergantine's 
+  spectacular Birds of Paradise theme:
+    http://joebergantine.com/werkstatt/birds-of-paradise
+
+  See it here:
+    http://jameshome.com/~jh/birdsofparadise.png
+
+  Get it here:
+    https://github.com/jameshome/dotvim/blob/master/colors/birdsofparadise.vim
+
 Installation:
 
   git clone git://github.com/jameshome/dotvim.git ~/.vim
 
-Symlink .vimrc:
+  Symlink .vimrc:
 
-  ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/vimrc ~/.vimrc
 
-Vim plugins are installed as git submodules. Check these out by running:
+  Vim plugins are installed as git submodules. Check these out by running:
 
-  cd ~/.vim
-  git submodule init
-  git submodule update
+    cd ~/.vim
+    git submodule init
+    git submodule update
 
-Add new ones with:
+  Add new ones with:
 
-  git submodule add (git url) bundle/(bundle name)
-  git add .
+    git submodule add (git url) bundle/(bundle name)
+    git add .
+
+Not in love with your coding font? Try Droid Sans Mono:
+  
+  http://code.google.com/webfonts/family?family=Droid+Sans+Mono
 

@@ -13,7 +13,7 @@
 "   http://www.vim.org/scripts/script.php?script_id=2540
 "
 "   birdsofparadise.vim
-"   http://github.com/jameshome/dotvim/colors/birdsofparadise.vim
+"   https://github.com/jameshome/dotvim/blob/master/colors/birdsofparadise.vim
 "
 "   Droid Sans Mono 
 "   http://code.google.com/webfonts/family?family=Droid+Sans+Mono
@@ -152,4 +152,5 @@ function! HandleURI()
 	  echo "No link found."
   endif
 endfunction
+
 
