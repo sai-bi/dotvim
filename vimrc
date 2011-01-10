@@ -60,7 +60,12 @@ map <Leader>v :vs<CR><C-w><C-W>
 map <Leader>s :sp<CR><C-w><C-W>
 map <Leader>q :q<CR>
 map <Leader>e :e.<CR>
-map <Leader>b :BufExplorer<CR>
+map <silent> <Leader>b :BufExplorer<CR>
+map <silent> <Leader>r :set cursorcolumn!<CR>
+if exists('*HexHighlight()')
+  nmap <silent> <Leader>3 :<Plug>HexHighlightToggle<Return>
+endif
+
 
 " SWAP DIRECTORY
 set backupdir=~/.vim/backup
@@ -80,6 +85,9 @@ if has('gui_running')
   set foldcolumn=1
   set foldlevel=1
 
+  " CLIPBOARD
+  set clipboard=unnamed
+
   " SPELLING AND SEARCH HIGHLIGHTING
   set spell
   set incsearch
@@ -89,7 +97,7 @@ if has('gui_running')
 
   " GUI 
   set guifont=Droid_Sans_Mono:h12 
-  set guioptions=aAce
+  set guioptions=e
   set fuoptions=maxhorz,maxvert
   set transparency=3
   set linespace=1
@@ -109,7 +117,6 @@ if has('gui_running')
 
   " CURSOR 
   set cursorline
-  set cursorcolumn
   set guicursor=n-v-c:Block-Cursor/lCursor-blinkon0,ve:ver35-Cursor,o:hor5-Cursor,i-ci:ver15-Cursor/lCursor,r-cr:hor5-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
   
   filetype plugin indent on
