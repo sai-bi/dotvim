@@ -31,8 +31,8 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 set wrap linebreak textwidth=0
-set nolist
-set listchars=tab:▸\ ,eol:¬
+set nolist                      " I don't usually show list characters
+set listchars=tab:▸\ ,eol:¬     " but when I do, I make it these list characters.
 
 " SEARCH AND BROWSE
 set ignorecase
@@ -53,6 +53,7 @@ set history=1000
 
 " KEYMAPS
 let mapleader=" "
+nmap <Space> <Nop>
 vmap <D-]> >gv
 vmap <D-[> <gv
 map <Leader>g :call HandleURI()<CR><CR>
@@ -148,6 +149,9 @@ let g:netrw_liststyle=1
 
 " BUFEXPLORER
 let g:bufExplorerDefaultHelp=0
+
+" SNIPMATE
+let g:snippets_dir="~/.vim/snippets"
 
 " OPEN URIS
 function! HandleURI()
