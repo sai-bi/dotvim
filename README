@@ -24,15 +24,18 @@ Installation:
   Vim plugins are installed as git submodules. Check these out by running:
 
     cd ~/.vim
-    git submodule init
-    git submodule update
+    git submodule update --init
 
-  Add new ones with:
+Not in love with your coding font? Try Droid Sans Mono:
+
+  http://code.google.com/webfonts/family?family=Droid+Sans+Mono
+
+--
+
+Admin:
+
+  Add new bundles:
 
     git submodule add (git url) bundle/(bundle name)
     git add .
-
-Not in love with your coding font? Try Droid Sans Mono:
-  
-  http://code.google.com/webfonts/family?family=Droid+Sans+Mono
 
