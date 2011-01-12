@@ -1,22 +1,19 @@
 "
 " a .vimrc by jh@jameshome.com
-" 
+"   
 " ingredients for our recipe:
 "
 "   Pathogen
 "   http://www.vim.org/scripts/script.php?script_id=2332
-"
-"   Command-T
-"   http://www.vim.org/scripts/script.php?script_id=3025
-"
-"   snipMate
-"   http://www.vim.org/scripts/script.php?script_id=2540
 "
 "   birdsofparadise.vim
 "   https://github.com/jameshome/dotvim/blob/master/colors/birdsofparadise.vim
 "
 "   Droid Sans Mono 
 "   http://code.google.com/webfonts/family?family=Droid+Sans+Mono
+"
+"   and these scripts:
+"   https://github.com/jameshome/dotvim/tree/master/bundle
 "
 
 set nocompatible
@@ -153,6 +150,9 @@ let g:bufExplorerDefaultHelp=0
 
 " SNIPMATE
 let g:snippets_dir="~/.vim/snippets"
+
+" AUTOCOMPLPOP
+let g:acp_behaviorKeywordLength = 10
 
 " OPEN URIS
 function! HandleURI()
