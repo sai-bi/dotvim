@@ -10,6 +10,3 @@
 [submodule "bundle/hexhighlight"]
 	path = bundle/hexhighlight
 	url = https://github.com/yurifury/hexHighlight.git
-[submodule "autocomplpop"]
-	path = autocomplpop
-	url = https://github.com/vim-scripts/AutoComplPop.git
