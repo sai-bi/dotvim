@@ -145,7 +145,8 @@ let g:CommandTMaxHeight=30
 
 " NETRW
 let g:netrw_sort_sequence='\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$'
-let g:netrw_liststyle=1
+let g:netrw_liststyle=3
+let g:netrw_banner=0
 
 " BUFEXPLORER
 let g:bufExplorerDefaultHelp=0

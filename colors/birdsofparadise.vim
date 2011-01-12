@@ -99,6 +99,8 @@ let colors_name="birdsofparadise"
 
   hi Directory          guifg=#c9bfbe ctermfg=251   guibg=NONE    ctermbg=NONE gui=NONE
   hi link netrwClassify               Directory                               
+  hi clear netrwTreeBar
+  hi link netrwTreeBar                Ignore
   hi link netrwSymLink                Normal                                  
                                                                               
   hi link htmlTag                     htmlStatement                           
