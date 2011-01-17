@@ -22,8 +22,10 @@
 set nocompatible
 
 " PATHOGEN
+filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+filetype plugin indent on
 
 " WHITESPACE
 set tabstop=2
@@ -37,6 +39,7 @@ set listchars=tab:▸\ ,eol:¬     " but when I do, I make it these list charact
 " SEARCH AND BROWSE
 set ignorecase
 set smartcase
+set gdefault
 set scrolloff=3
 
 " MESSAGING AND SOUND
@@ -54,19 +57,30 @@ set history=1000
 " KEYMAPS
 let mapleader=" "
 nmap <Space> <Nop>
+nnoremap <up> <Nop>
+nnoremap <down> <Nop>
+nnoremap <left> <Nop>
+nnoremap <right> <Nop>
+nnoremap j gj
+nnoremap k gk
 vmap <D-]> >gv
 vmap <D-[> <gv
 map <Leader>g :call HandleURI()<CR><CR>
-map <Leader>v :vs<CR><C-w><C-W>
-map <Leader>s :sp<CR><C-w><C-W>
 map <Leader>q :q<CR>
 map <Leader>e :e.<CR>
+map <Leader>a :Ack 
+nnoremap <Leader>u :GundoToggle<CR>
+nnoremap <leader>rc <C-w><C-v><C-l>:e $MYVIMRC<cr>
 map <silent> <Leader>b :BufExplorer<CR>
-map <silent> <Leader>r :set cursorcolumn!<CR>
 if exists('*HexHighlight()')
   nmap <silent> <Leader>3 :<Plug>HexHighlightToggle<Return>
 endif
-
+map <Leader>v :vs<CR><C-w><C-W>
+map <Leader>s :sp<CR><C-w><C-W>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " SWAP DIRECTORY
 set backupdir=~/.vim/backup
@@ -79,8 +93,9 @@ if has('gui_running')
 
   colorscheme birdsofparadise
 
-  " LINE NUMBERS
+  " LINE NUMBERS AND MARGIN INDICATOR
   set nu
+  set colorcolumn=85
 
   " FOLDING
   set foldcolumn=1
@@ -100,7 +115,7 @@ if has('gui_running')
   set guifont=Droid_Sans_Mono:h12 
   set guioptions=e
   set fuoptions=maxhorz,maxvert
-  set transparency=3
+  set transparency=5
   set linespace=1
   set title titlestring=%t
 
@@ -120,7 +135,6 @@ if has('gui_running')
   set cursorline
   set guicursor=n-v-c:Block-Cursor/lCursor-blinkon0,ve:ver35-Cursor,o:hor5-Cursor,i-ci:ver15-Cursor/lCursor,r-cr:hor5-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
   
-  filetype plugin indent on
   
 else
   syntax off

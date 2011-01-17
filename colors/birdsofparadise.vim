@@ -59,6 +59,7 @@ let colors_name="birdsofparadise"
   hi link MatchParen                  Cursor
   hi CursorLine         guifg=NONE    ctermfg=NONE guibg=#504444 ctermbg=59   gui=NONE
   hi CursorColumn       guifg=NONE    ctermfg=NONE guibg=#2a1d1b ctermbg=234  gui=NONE
+  hi ColorColumn        guifg=NONE    ctermfg=NONE guibg=#372725 ctermbg=236  gui=NONE
 
   hi Visual             guifg=NONE    ctermfg=NONE guibg=#675757 ctermbg=59   gui=NONE
   hi VertSplit          guifg=#4a3837 ctermfg=237  guibg=#4a3837 ctermbg=237  gui=NONE
