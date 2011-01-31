@@ -131,6 +131,10 @@ if has('gui_running')
   " CURSOR 
   set cursorline
   set guicursor=n-v-c:Block-Cursor/lCursor-blinkon0,ve:ver35-Cursor,o:hor5-Cursor,i-ci:ver15-Cursor/lCursor,r-cr:hor5-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+
+  " PRINTING
+  set printfont=Droid_Sans_Mono:h10
+  set printoptions=paper:letter,syntax:no,header:0
   
   
 else
