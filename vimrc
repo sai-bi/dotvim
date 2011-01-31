@@ -54,10 +54,6 @@ set history=1000
 " KEYMAPS
 let mapleader=" "
 nmap <Space> <Nop>
-nnoremap <up> <Nop>
-nnoremap <down> <Nop>
-nnoremap <left> <Nop>
-nnoremap <right> <Nop>
 nnoremap j gj
 nnoremap k gk
 vmap <D-]> >gv
