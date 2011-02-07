@@ -60,10 +60,10 @@ vmap <D-]> >gv
 vmap <D-[> <gv
 map <Leader>g :call HandleURI()<CR><CR>
 map <Leader>q :q<CR>
-map <Leader>e :e.<CR>
+map <Leader>e :e.<Return>
 map <Leader>a :Ack 
 nnoremap <Leader>u :GundoToggle<CR>
-nnoremap <leader>rc <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>rc <C-w><C-v><C-l>:e $MYVIMRC<CR>
 map <silent> <Leader>b :BufExplorer<CR>
 if exists('*HexHighlight()')
   nmap <silent> <Leader>3 :<Plug>HexHighlightToggle<Return>
