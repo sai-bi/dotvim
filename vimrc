@@ -45,6 +45,7 @@ set showcmd
 set vb t_vb=   " no bell of any kind
 
 " COMMAND COMPLETION
+" o
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc
 
@@ -59,12 +60,12 @@ nnoremap k gk
 vmap <D-]> >gv
 vmap <D-[> <gv
 map <Leader>g :call HandleURI()<CR><CR>
-map <Leader>q :q<CR>
-map <Leader>e :e.<Return>
+map <Leader>w :q<CR>
+map <Leader>o :e.<CR>
 map <Leader>a :Ack 
 nnoremap <Leader>u :GundoToggle<CR>
 nnoremap <leader>rc <C-w><C-v><C-l>:e $MYVIMRC<CR>
-map <silent> <Leader>b :BufExplorer<CR>
+map <silent> <Leader>` :BufExplorer<CR>
 if exists('*HexHighlight()')
   nmap <silent> <Leader>3 :<Plug>HexHighlightToggle<Return>
 endif
@@ -157,7 +158,6 @@ let g:CommandTMaxHeight=30
 " NETRW
 let g:netrw_sort_sequence='\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$'
 let g:netrw_liststyle=3
-let g:netrw_banner=0
 
 " BUFEXPLORER
 let g:bufExplorerDefaultHelp=0

@@ -81,7 +81,7 @@ let colors_name="birdsofparadise"
 
   hi Search             guifg=bg      ctermfg=bg   guibg=#a0c25f ctermbg=143  gui=NONE
   hi clear IncSearch
-  hi link IncSearch                   Search
+  hi IncSearch             guifg=bg      ctermfg=bg   guibg=#c9f578 ctermbg=143  gui=NONE
 
   hi NonText            guifg=#2a1d1b ctermfg=234   guibg=NONE   ctermbg=NONE gui=NONE
   hi clear SpecialKey
