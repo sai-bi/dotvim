@@ -45,14 +45,16 @@ set showcmd
 set vb t_vb=   " no bell of any kind
 
 " COMMAND COMPLETION
-" o
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc
+
+" BUFFER HANDLING
+set hidden
 
 " HISTORY
 set history=1000
 
-" KEYMAPS
+" KEYMAPS AND COMMANDS
 let mapleader=" "
 nmap <Space> <Nop>
 nnoremap j gj
@@ -66,6 +68,7 @@ map <Leader>a :Ack
 nnoremap <Leader>u :GundoToggle<CR>
 nnoremap <leader>rc <C-w><C-v><C-l>:e $MYVIMRC<CR>
 map <silent> <Leader>` :BufExplorer<CR>
+map <silent> <Leader>7 :!iconv -c -f utf-8 -t ASCII//TRANSLIT<CR>
 if exists('*HexHighlight()')
   nmap <silent> <Leader>3 :<Plug>HexHighlightToggle<Return>
 endif
@@ -178,5 +181,3 @@ function! HandleURI()
 	  echo "No link found."
   endif
 endfunction
-
-
