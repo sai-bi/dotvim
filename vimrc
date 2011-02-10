@@ -65,15 +65,15 @@ map <Leader>g :call HandleURI()<CR><CR>
 map <Leader>w :q<CR>
 map <Leader>o :e.<CR>
 map <Leader>a :Ack 
+map <Leader>v :vs<CR><C-w><C-W>
+map <Leader>s :sp<CR><C-w><C-W>
+map <silent> <Leader>b :LustyJuggler<CR>
+map <silent> <Leader>7 :!iconv -c -f utf-8 -t ASCII//TRANSLIT<CR>
 nnoremap <Leader>u :GundoToggle<CR>
 nnoremap <leader>rc <C-w><C-v><C-l>:e $MYVIMRC<CR>
-map <silent> <Leader>` :BufExplorer<CR>
-map <silent> <Leader>7 :!iconv -c -f utf-8 -t ASCII//TRANSLIT<CR>
 if exists('*HexHighlight()')
   nmap <silent> <Leader>3 :<Plug>HexHighlightToggle<Return>
 endif
-map <Leader>v :vs<CR><C-w><C-W>
-map <Leader>s :sp<CR><C-w><C-W>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -162,14 +162,14 @@ let g:CommandTMaxHeight=30
 let g:netrw_sort_sequence='\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$'
 let g:netrw_liststyle=3
 
-" BUFEXPLORER
-let g:bufExplorerDefaultHelp=0
-
 " SNIPMATE
 let g:snippets_dir="~/.vim/snippets"
 
 " AUTOCOMPLPOP
 let g:acp_behaviorKeywordLength = 10
+
+" LUSTY
+let g:LustyJugglerSuppressRubyWarning = 1
 
 " OPEN URIS
 function! HandleURI()
