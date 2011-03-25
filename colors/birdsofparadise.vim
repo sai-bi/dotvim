@@ -68,7 +68,7 @@ let colors_name="birdsofparadise"
   hi StatusLineNC       guifg=#4a3837 ctermfg=237  guibg=#887e7c ctermbg=244  gui=reverse  cterm=reverse
   hi User1              guifg=#4a3837 ctermfg=237  guibg=#ff7711 ctermbg=15   gui=reverse  cterm=reverse
 
-  hi Folded             guifg=#938a89 ctermfg=245  guibg=#261b1a ctermbg=234  gui=NONE
+  hi Folded             guifg=#4a3837 ctermfg=237  guibg=#ffffff ctermbg=15   gui=NONE  cterm=reverse
   hi FoldColumn         guifg=#1a1211 ctermfg=233  guibg=#2a1d1b ctermbg=234  gui=NONE
   
   hi Error              guifg=#ffffff ctermfg=15   guibg=#da4632 ctermbg=167  gui=NONE
