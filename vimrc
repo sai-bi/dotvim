@@ -67,6 +67,7 @@ map <Leader>o :e.<CR>
 map <Leader>a :Ack 
 map <Leader>v :vs<CR><C-w><C-W>
 map <Leader>s :sp<CR><C-w><C-W>
+map <Leader>i :IMG<CR>
 map <silent> <Leader>b :LustyJuggler<CR>
 map <silent> <Leader>7 :!iconv -c -f utf-8 -t ASCII//TRANSLIT<CR>
 nnoremap <Leader>u :GundoToggle<CR>

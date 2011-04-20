@@ -25,3 +25,6 @@
 [submodule "bundle/lusty"]
 	path = bundle/lusty
 	url = https://github.com/sjbach/lusty.git
+[submodule "bundle/htmlinsert"]
+	path = bundle/htmlinsert
+	url = https://github.com/vim-scripts/HTML--insert.git
