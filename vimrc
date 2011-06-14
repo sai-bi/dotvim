@@ -62,8 +62,8 @@ nnoremap k gk
 vmap <D-]> >gv
 vmap <D-[> <gv
 map <Leader>g :call HandleURI()<CR><CR>
-map <Leader>w :q<CR>
 map <Leader>o :e.<CR>
+map <Leader>w :q<CR>
 map <Leader>a :Ack 
 map <Leader>v :vs<CR><C-w><C-W>
 map <Leader>s :sp<CR><C-w><C-W>
@@ -159,6 +159,7 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+au BufNewFile,BufRead *.hbs set filetype=html
 iabbrev </ </<C-X><C-O>
 imap <C-Tab> <C-X><C-O>
 
@@ -168,6 +169,11 @@ let g:CommandTMaxHeight=30
 " NETRW
 let g:netrw_sort_sequence='\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$'
 let g:netrw_liststyle=3
+let g:netrw_browse_split=4
+let g:netrw_preview=1
+let g:netrw_banner=0
+let g:netrw_winsize=30
+
 
 " SNIPMATE
 let g:snippets_dir="~/.vim/snippets"
@@ -188,3 +194,5 @@ function! HandleURI()
 	  echo "No link found."
   endif
 endfunction
+
+
