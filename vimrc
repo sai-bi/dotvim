@@ -79,6 +79,12 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+cmap cd. :cd %:p:h<CR>:pwd<CR>
+
+if has("gui_macvim")
+  map <D-k> :!open -a Google\ Chrome %<CR><CR>
+endif
+
 
 " SWAP DIRECTORY
 set backupdir=~/.vim/backup
