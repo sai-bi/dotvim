@@ -162,12 +162,6 @@ let g:CommandTMaxHeight=30
 
 " NETRW
 let g:netrw_sort_sequence='\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$'
-let g:netrw_liststyle=3
-let g:netrw_browse_split=4
-let g:netrw_preview=1
-let g:netrw_banner=0
-let g:netrw_winsize=30
-
 
 " SNIPMATE
 let g:snippets_dir="~/.vim/snippets"
