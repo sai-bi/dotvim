@@ -179,7 +179,7 @@ let g:acp_behaviorKeywordLength = 10
 let g:LustyJugglerSuppressRubyWarning = 1
 
 " OPEN URIS
-function! HandleURI()
+fun! HandleURI()
   let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
   echo s:uri
   if s:uri != ""
@@ -187,6 +187,19 @@ function! HandleURI()
   else
 	  echo "No link found."
   endif
-endfunction
+endfun
 
+fun! UpdateCaches()
+  CommandTFlush
+  echo "File caches updated."
+endfun
 
+" MACVIM MENUING AND KEY MAPPING
+if has("gui_macvim")
+
+  an <silent> 30.90 View.Toggle\ Line\ Numbers :set nu!<CR>
+  an <silent> 30.100 View.Toggle\ Invisible\ Characters :set list!<CR>
+  an 30.200 View.-SEP1- <Nop>
+  an 30.210 View.Update\ File\ Caches :call UpdateCaches()<CR>
+endif
+  
