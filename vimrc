@@ -19,10 +19,19 @@
 set nocompatible
 
 " PATHOGEN
+"filetype off
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
+"filetype plugin indent on
+
+" VUNDLE
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-filetype plugin indent on
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+
+
 
 " WHITESPACE
 set tabstop=2

@@ -28,3 +28,6 @@
 [submodule "bundle/htmlinsert"]
 	path = bundle/htmlinsert
 	url = https://github.com/vim-scripts/HTML--insert.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular
