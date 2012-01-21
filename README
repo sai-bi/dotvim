@@ -1,5 +1,6 @@
 a .vim configuration by jh@jameshome.com
 
+
 Featuring:
 
   birdsofparadise.vim
@@ -13,6 +14,7 @@ Featuring:
   Get it here:
     https://github.com/jameshome/dotvim/blob/master/colors/birdsofparadise.vim
 
+
 Installation:
 
   git clone git://github.com/jameshome/dotvim.git ~/.vim
@@ -21,27 +23,13 @@ Installation:
 
     ln -s ~/.vim/vimrc ~/.vimrc
 
-  Vim plugins are installed as git submodules. Check these out by running:
+  Vim plugins are managed by Vundle, so you'll want to follow the 
+  instructions here to get that installed:
 
-    cd ~/.vim
-    git submodule update --init
+    https://github.com/gmarik/vundle
+
 
 Not in love with your coding font? Try Droid Sans Mono:
 
   http://code.google.com/webfonts/family?family=Droid+Sans+Mono
-
---
-
-Admin:
-
-  Add new bundles:
-
-    git submodule add (git url) bundle/(bundle name)
-    git add .
-
-  Remove an existing bundle:
-
-    Remove it from .gitmodules
-    Remove it from .git/config
-    git rm --cached <path-to-module>
 

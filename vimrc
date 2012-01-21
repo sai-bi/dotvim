@@ -3,7 +3,7 @@
 "   
 " ingredients for our recipe:
 "
-"   Pathogen
+"   Vundle
 "   http://www.vim.org/scripts/script.php?script_id=2332
 "
 "   birdsofparadise.vim
@@ -11,27 +11,25 @@
 "
 "   Droid Sans Mono 
 "   http://code.google.com/webfonts/family?family=Droid+Sans+Mono
-"
-"   and these scripts:
-"   https://github.com/jameshome/dotvim/tree/master/bundle
-"
 
 set nocompatible
-
-" PATHOGEN
-"filetype off
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
-"filetype plugin indent on
 
 " VUNDLE
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-
-
-
+Bundle 'AutoComplPop'
+Bundle 'bufexplorer.zip'
+Bundle 'wincent/Command-T'
+Bundle 'Gundo'
+Bundle 'yurifury/hexHighlight'
+Bundle 'sjbach/lusty'
+Bundle 'tpope/vim-repeat'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'godlygeek/tabular'
+Bundle 'Lokaltog/vim-powerline'
 
 " WHITESPACE
 set tabstop=2
@@ -41,6 +39,7 @@ set shiftwidth=2
 set wrap linebreak textwidth=0
 set nolist                      " I don't usually show list characters
 set listchars=tab:▸\ ,eol:¬     " but when I do, I make it these list characters.
+set autoindent
 
 " SEARCH AND BROWSE
 set ignorecase
@@ -125,7 +124,7 @@ if has('gui_running')
   nnoremap <esc> :noh<return>:<BS><esc>
 
   " GUI 
-  set guifont=Droid_Sans_Mono:h12 
+  set guifont=Droid_Sans_Mono_for_Powerline:h12
   set guioptions=e
   set fuoptions=maxhorz,maxvert
   set transparency=5
@@ -143,6 +142,10 @@ if has('gui_running')
   set statusline+=%-10.(\ %Y%)
   set statusline+=\ %-8.(%l,%c%)
   set statusline+=\ %P\ 
+
+  " POWERLINE
+  let g:Powerline_symbols = 'fancy'
+  let g:Powerline_cache_file = ''
 
   " CURSOR 
   set cursorline
