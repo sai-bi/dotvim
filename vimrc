@@ -8,11 +8,9 @@
 "
 "   birdsofparadise.vim
 "   https://github.com/jameshome/dotvim/blob/master/colors/birdsofparadise.vim
-"
-"   Droid Sans Mono 
-"   http://code.google.com/webfonts/family?family=Droid+Sans+Mono
 
 set nocompatible
+autocmd bufwritepost .vimrc source ~/.vimrc
 
 " VUNDLE
 filetype off
@@ -22,14 +20,13 @@ Bundle 'gmarik/vundle'
 Bundle 'AutoComplPop'
 Bundle 'bufexplorer.zip'
 Bundle 'wincent/Command-T'
+Bundle 'msanders/snipmate.vim'
 Bundle 'Gundo'
 Bundle 'yurifury/hexHighlight'
 Bundle 'sjbach/lusty'
 Bundle 'tpope/vim-repeat'
-Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'godlygeek/tabular'
-Bundle 'Lokaltog/vim-powerline'
 
 " WHITESPACE
 set tabstop=2
@@ -37,8 +34,8 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 set wrap linebreak textwidth=0
-set nolist                      " I don't usually show list characters
-set listchars=tab:▸\ ,eol:¬     " but when I do, I make it these list characters.
+set nolist
+set listchars=tab:▸\ ,eol:¬
 set autoindent
 
 " SEARCH AND BROWSE
@@ -72,7 +69,6 @@ vmap <D-[> <gv
 map <Leader>g :call HandleURI()<CR><CR>
 map <Leader>o :e.<CR>
 map <Leader>w :q<CR>
-map <Leader>a :Ack 
 map <Leader>v :vs<CR><C-w><C-W>
 map <Leader>s :sp<CR><C-w><C-W>
 map <Leader>i :IMG<CR>
@@ -89,10 +85,12 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 cmap cd. :cd %:p:h<CR>:pwd<CR>
 
+
+
+
 if has("gui_macvim")
   map <D-k> :!open -a Google\ Chrome %<CR><CR>
 endif
-
 
 " SWAP DIRECTORY
 set backupdir=~/.vim/backup
@@ -105,8 +103,7 @@ if has('gui_running')
 
   colorscheme birdsofparadise
 
-  " LINE NUMBERS AND MARGIN INDICATOR
-  set nu
+  " INDICATOR
   set colorcolumn=85
 
   " FOLDING
@@ -124,7 +121,7 @@ if has('gui_running')
   nnoremap <esc> :noh<return>:<BS><esc>
 
   " GUI 
-  set guifont=Droid_Sans_Mono_for_Powerline:h12
+  set guifont=Droid_Sans_Mono:h12
   set guioptions=e
   set fuoptions=maxhorz,maxvert
   set transparency=5
@@ -143,10 +140,6 @@ if has('gui_running')
   set statusline+=\ %-8.(%l,%c%)
   set statusline+=\ %P\ 
 
-  " POWERLINE
-  let g:Powerline_symbols = 'fancy'
-  let g:Powerline_cache_file = ''
-
   " CURSOR 
   set cursorline
   set guicursor=n-v-c:Block-Cursor/lCursor-blinkon0,ve:ver35-Cursor,o:hor5-Cursor,i-ci:ver15-Cursor/lCursor,r-cr:hor5-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
@@ -154,7 +147,6 @@ if has('gui_running')
   " PRINTING
   set printfont=Droid_Sans_Mono:h10
   set printoptions=paper:letter,syntax:no,header:0
-  
   
 else
   syntax off
@@ -211,7 +203,6 @@ function! CloseHiddenBuffers()
   echon "Deleted " . l:tally . " buffers"
 endfun
 
-
 " OPEN URIS
 fun! HandleURI()
   let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
@@ -223,17 +214,64 @@ fun! HandleURI()
   endif
 endfun
 
+" UPDATE COMMAND-T
 fun! UpdateCaches()
   CommandTFlush
   echo "File caches updated."
 endfun
 
-" MACVIM MENUING AND KEY MAPPING
-if has("gui_macvim")
+" MENU FUNCTIONS
+fun! NuYes()
+  set nu
+  an <silent> 30.90 View.Hide\ Line\ Numbers :call NuNo()<CR>
+  aunmenu View.Show\ Line\ Numbers
+endfun
+fun! NuNo()
+  set nonu
+  an <silent> 30.90 View.Show\ Line\ Numbers :call NuYes()<CR>
+  aunmenu View.Hide\ Line\ Numbers
+endfun
 
-  an <silent> 30.90 View.Toggle\ Line\ Numbers :set nu!<CR>
-  an <silent> 30.100 View.Toggle\ Invisible\ Characters :set list!<CR>
+fun! ListYes()
+    set list
+    an <silent> 30.90 View.Hide\ Invisible\ Characters :call ListNo()<CR>
+    aunmenu View.Show\ Invisible\ Characters
+endfun
+fun! ListNo()
+    set nolist
+    an <silent> 30.90 View.Show\ Invisible\ Characters :call ListYes()<CR>
+    aunmenu View.Hide\ Invisible\ Characters 
+endfun
+
+" MENU SETTINGS
+
+fun! BufferToShell(script)
+    exe '%! ' . a:script
+endfun
+
+if has("gui_running")
+  fun! RemoveMenus()
+    aunmenu Edit.Repeat
+    aunmenu Edit.Settings\ Window
+    aunmenu Edit.Startup\ Settings
+    aunmenu Edit.Global\ Settings
+    aunmenu Edit.File\ Settings
+    aunmenu Edit.Color\ Scheme
+    aunmenu Edit.-SEP3-
+    aunmenu Edit.Keymap
+    aunmenu Edit.Font
+    aunmenu Buffers.
+    aunmenu Syntax.
+    aunmenu Tools.
+  endfun
+  autocmd VimEnter * call RemoveMenus()
+  autocmd BufReadPost * aunmenu Buffers.
+  an <silent> 30.90 View.Show\ Line\ Numbers :call NuYes()<CR>
+  call NuYes()
+  an <silent> 30.90 View.Hide\ Invisible\ Characters :call ListYes()<CR>
+  call ListNo()
   an 30.200 View.-SEP1- <Nop>
   an 30.210 View.Update\ File\ Caches :call UpdateCaches()<CR>
+  an 40.100 Text.Convert\ to\ ASCII :call BufferToShell('iconv -c -f utf-8 -t ASCII//TRANSLIT')<CR>
 endif
   

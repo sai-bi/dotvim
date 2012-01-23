@@ -1,6 +1,5 @@
 a .vim configuration by jh@jameshome.com
 
-
 Featuring:
 
   birdsofparadise.vim
@@ -14,7 +13,6 @@ Featuring:
   Get it here:
     https://github.com/jameshome/dotvim/blob/master/colors/birdsofparadise.vim
 
-
 Installation:
 
   git clone git://github.com/jameshome/dotvim.git ~/.vim
@@ -27,9 +25,4 @@ Installation:
   instructions here to get that installed:
 
     https://github.com/gmarik/vundle
-
-
-Not in love with your coding font? Try Droid Sans Mono:
-
-  http://code.google.com/webfonts/family?family=Droid+Sans+Mono
 
